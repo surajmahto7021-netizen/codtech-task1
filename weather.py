@@ -49,3 +49,17 @@ if response.status_code == 200:
 
 else:
     print("API request failed. Check API key or internet.")
+   
+plt.figure(figsize=(12, 6))
+plt.plot(df["Date-Time"], df["Temperature (°C)"], marker='o')
+plt.title(f"Temperature Forecast for {CITY}")
+plt.xlabel("Date-Time")
+plt.ylabel("Temperature (°C)")
+plt.xticks(rotation=45)
+plt.grid(True)
+plt.tight_layout()
+
+# --- Graph save in folder ---
+plt.savefig("TemperatureGraph.png")   
+
+plt.show()  # Graph window open
